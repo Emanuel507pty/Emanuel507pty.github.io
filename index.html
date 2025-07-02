@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorpresa</title>
+  <link rel="icon" href="/img/f1.png">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1e1e2f, #2a2a3d);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card, .invitation {
+      background-color: #ffffff10;
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      text-align: center;
+      max-width: 100%;
+      width: 100%;
+      max-width: 1100px;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card h1 {
+      font-size: 6vw;
+      margin-bottom: 15px;
+    }
+
+    .card p, .details {
+      font-size: 4.5vw;
+      margin: 10px 0;
+    }
+
+    .details {
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background-color: #ff4757;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      font-size: 4vw;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover {
+      background-color: #ff6b81;
+    }
+
+    @media (min-width: 768px) {
+      .card h1 { font-size: 28px; }
+      .card p, .details, .btn { font-size: 18px; }
+    }
+
+    .invitation {
+      display: none;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .invitation .image {
+      flex: 1 1 200px;
+      max-width: 300px;
+    }
+
+    .invitation .image img {
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .center-message {
+      flex: 1 1 300px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .center-message h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .center-message p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn.yes {
+      background-color: #2ed573;
+      color: #000;
+    }
+
+    .btn.no {
+      background-color: #ff6b81;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .invitation {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .invitation .image, .center-message {
+        max-width: 90%;
+      }
+
+      .center-message h1 {
+        font-size: 1.6rem;
+      }
+
+      .center-message p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sección Principal -->
+  <div class="card" id="mainCard">
+    <h1>¡Bienvenida Madame!</h1>
+    <div class="details">
+      Te tengo una sorpresa 🏎️ 🏎️ 🏎️  
+    </div>
+    <button class="btn" onclick="mostrarInvitacion()">Toca aquí</button>
+  </div>
+
+  <!-- Sección de la Invitación -->
+  <div class="invitation" id="invitacion">
+    <div class="image">
+      <img src="/img/Max.avif" alt="Max Verstappen">
+    </div>
+
+    <div class="center-message">
+      <h1>🎬 ¡Ross!</h1>
+      <p>¿Quieres acompañarme al cine a ver la película de Fórmula 1? 🏁</p>
+      <p>¡Tú eliges la fecha y la hora! ❤️</p>
+      <p>¡Yo invito! 🍿❤️</p>
+      <p>¿Aceptas?</p>
+      <div class="buttons">
+        <button class="btn yes" onclick="alert('¡Sabía que dirías que sí! 😄 habrá una sorpresa jajaja')">Sí</button>
+        <button class="btn no" onclick="alert('JAJAJA igual no hay un no por respuesta')">No</button>
+      </div>
+    </div>
+
+    <div class="image">
+      <img src="/img/Lecler.avif" alt="Charles Leclerc">
+    </div>
+  </div>
+
+  <script>
+    function mostrarInvitacion() {
+      document.getElementById("mainCard").style.display = "none";
+      document.getElementById("invitacion").style.display = "flex";
+    }
+  </script>
+</body>
+</html>
